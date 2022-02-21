@@ -43,7 +43,7 @@ def transformation_4():
     # y translation of -1.5
     t3 = p2_sol.hom_trans_y(-1.5)
     # combine and return all transformations (fixed order)
-    return np.matmul(t3, t2, t1)
+    return np.matmul(np.matmul(t3, t2), t1)
 
 def transformation_5():
     # x rotation of pi/2
@@ -55,7 +55,7 @@ def transformation_5():
     # z rotation of -pi/2
     t4 = p2_sol.hom_rot_z(-pi/2)
     # combine and return all transformations
-    return np.matmul(np.matmul(t1, t2), t3, t4)
+    return np.matmul(np.matmul(t1, t2), np.matmul(t3, t4))
 
 
 if __name__ == '__main__':
