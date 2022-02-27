@@ -10,7 +10,7 @@ def roll_pitch_yaw(vector):
     Ry = rbm.rot_y(theta)
     # roll
     Rz = rbm.rot_z(phi)
-    R = np.matmul(Rz, Ry, Rx)
+    R = np.matmul(np.matmul(Rz, Ry), Rx)
     return R.dot(vector)
 
 if __name__ == '__main__':

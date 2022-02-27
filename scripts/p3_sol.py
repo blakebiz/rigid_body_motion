@@ -13,7 +13,7 @@ def transformation_1():
     # y translation of -1.5
     t3 = p2_sol.hom_trans_y(-1.5)
     # combine and return all transformations
-    return np.matmul(t1, t2, t3)
+    return np.matmul(np.matmul(t1, t2), t3)
 
 def transformation_2():
     # z translation of .5
@@ -23,7 +23,7 @@ def transformation_2():
     # y translation of -1.5
     t3 = p2_sol.hom_trans_y(-1.5)
     # combine and return all transformations
-    return np.matmul(t1, t2, t3)
+    return np.matmul(np.matmul(t1, t2), t3)
 
 def transformation_3():
     # x rotation of 2.5
@@ -33,7 +33,7 @@ def transformation_3():
     # y translation of -1.5
     t3 = p2_sol.hom_trans_y(-1.5)
     # combine and return all transformations (fixed order)
-    return np.matmul(t3, t2, t1)
+    return np.matmul(np.matmul(t3, t2), t1)
 
 def transformation_4():
     # z translation of .5
